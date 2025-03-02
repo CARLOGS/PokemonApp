@@ -32,6 +32,7 @@ extension PokemonViewController: UITableViewDataSource, UITableViewDelegate {
         return dataManager.count()
     }
     
+    // Llena los datos asociadas a cada Pokémon
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonCell
@@ -51,6 +52,7 @@ extension PokemonViewController: UITableViewDataSource, UITableViewDelegate {
         return "Pokémon List"
     }
     
+    // Detecta el click sobre la celda y lanza la escena modal
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("seccion: \(indexPath.section) indexPath.row: \(indexPath.row)")
         

@@ -14,6 +14,7 @@ class ModalViewController: UIViewController {
     var pSkill: String?
     var pSpecial: String?
 
+    // Conecta cada campo en la vista
     @IBOutlet weak var imgPokemon: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblMove: UILabel!
@@ -28,28 +29,22 @@ class ModalViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Imagen pokémon
         if let pImageStr = pImage {
             imgPokemon.image = UIImage(named: pImageStr)
         }
         
+        // Nombre, movimiento y habilidad
         lblName.text = pName
         lblMove.text = pMove
         lblSkill.text = pSkill
         
+        // Categoría especial
         if let pSpecialStr = pSpecial {
-            imgSpecial.image = UIImage(named: pSpecialStr)
+            if !pSpecialStr.isEmpty {
+                imgSpecial.image = UIImage(named: pSpecialStr)
+            }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
